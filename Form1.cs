@@ -212,7 +212,7 @@ namespace DXFContours
                         break;
                     case FunctionsEnum.ContourPoint:
 
-                        List<EntityObject> contourPointEnts = MathHelper.EntitiesOutsidePoint(dxfReaderNETControl1.DXF.Entities, dxfReaderNETControl1.CurrentWCSpoint);
+                        List<EntityObject> contourPointEnts = MathHelper.EntitiesOutsidePoint(dxfReaderNETControl1.DXF.Entities.ToList(), dxfReaderNETControl1.CurrentWCSpoint);
                         toolStripStatusLabel1.Text = "";
                         if (contourPointEnts?.Count > 0)
                         {
@@ -297,7 +297,7 @@ namespace DXFContours
             if (mWindowState == "Maximized") this.WindowState = FormWindowState.Maximized;
 
             dxfReaderNETControl1.HighlightEntityOnHover = Convert.ToBoolean(Registry.GetValue(@"HKEY_CURRENT_USER\Software\" + ProgramName, "HighlightEntityOnHover", false).ToString());
-            dxfReaderNETControl1.ContinuousHighlight = Convert.ToBoolean(Registry.GetValue(@"HKEY_CURRENT_USER\Software\" + ProgramName, "ContinuousHighlight", false).ToString());
+            
             dxfReaderNETControl1.HighlightNotContinuous = Convert.ToBoolean(Registry.GetValue(@"HKEY_CURRENT_USER\Software\" + ProgramName, "HighlightNotContinuous", false).ToString());
 
             dxfReaderNETControl1.ShowAxes = Convert.ToBoolean(Registry.GetValue(@"HKEY_CURRENT_USER\Software\" + ProgramName, "ShowAxes", false).ToString());
@@ -374,7 +374,7 @@ namespace DXFContours
 
             Registry.SetValue(@"HKEY_CURRENT_USER\Software\" + ProgramName, "GridDisplay", System.Convert.ToInt32(dxfReaderNETControl1.GridDisplay));
             Registry.SetValue(@"HKEY_CURRENT_USER\Software\" + ProgramName, "HighlightEntityOnHover", dxfReaderNETControl1.HighlightEntityOnHover);
-            Registry.SetValue(@"HKEY_CURRENT_USER\Software\" + ProgramName, "ContinuousHighlight", dxfReaderNETControl1.ContinuousHighlight);
+            
             Registry.SetValue(@"HKEY_CURRENT_USER\Software\" + ProgramName, "HighlightNotContinuous", dxfReaderNETControl1.HighlightNotContinuous);
 
 

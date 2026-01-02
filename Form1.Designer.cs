@@ -65,7 +65,7 @@
             // dxfReaderNETControl1
             // 
             this.dxfReaderNETControl1.AutoSize = true;
-            this.dxfReaderNETControl1.ContinuousHighlight = false;
+            
             this.dxfReaderNETControl1.CustomCursor = DXFReaderNET.CustomCursorType.None;
             this.dxfReaderNETControl1.CustomCursorColor = System.Drawing.Color.White;
             this.dxfReaderNETControl1.DistributionCode = "";
